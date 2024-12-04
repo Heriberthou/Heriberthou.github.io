@@ -6,6 +6,19 @@
     --color_4: #FFB9B9;
 }
 
+.vt323-regular {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.pixelify-sans-custom {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600; /* Puedes cambiar este valor entre 400 y 700 */
+    font-style: normal;
+}
+
 /* Navbar */
 .navbar {
     padding: 2rem;
