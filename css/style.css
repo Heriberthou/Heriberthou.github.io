@@ -19,6 +19,17 @@
     font-style: normal;
 }
 
+/* Parkinsans Example */
+.parkinsans-heading {
+    font-family: "Parkinsans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700; /* Ejemplo de peso */
+    font-style: normal;
+    font-size: 2rem; /* Tamaño adicional */
+    color: var(--color_1); /* Usando tu paleta de colores */
+}
+
+
 /* Navbar */
 .navbar {
     padding: 2rem;
