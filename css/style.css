@@ -1,3 +1,24 @@
+.proyecto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.proyecto img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+}
+
+.about-me .contenedor h2,
+.about-me .contenedor p {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
 :root {
     --color_0: #3F3D56;
     --color_1: #6C63FF;
