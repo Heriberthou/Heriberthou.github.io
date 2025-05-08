@@ -58,43 +58,50 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
 
+
+<style>
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+
+<style>
+.about-me .contenedor h2,
+.about-me .contenedor p {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+</style>
+
 </head>
 
 <body class = "vt323-regular"  style="background-color: #add8e6;">
     <!-- NavBar -->
-    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #d3d3d3;">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
-                aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar-toggler">
-                <a class="navbar-brand" href="#" style="background-color: #0D0D0D; border-radius: 40px; padding: 3px;">
-                    <img src="./images/perfil.png" width="50" alt="My logo">
-                </a>
-                <ul class="navbar-nav d-flex justify-content-center aling-items-center"
-                    style="background-color: #0D0D0D; border-radius: 20px; padding: 2px;">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#aboutme" aria-current="page"
-                            style="font-family: 'Source Code Pro', monospace; color: #00FF00;">Sobre mí <span
-                                class="visually-hidden">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects"
-                            style="font-family: 'Source Code Pro', monospace; color: #00FF00;">Proyectos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#references"
-                            style="font-family: 'Source Code Pro', monospace; color: #00FF00;">Referencias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contactme"
-                            style="font-family: 'Source Code Pro', monospace; color: #00FF00;">Contacto</a>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Mi Portafolio</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
+      
 
     <!-- Me -->
     <section class="myclass d-flex align-items-center justify-content-center "
@@ -126,7 +133,7 @@
         }
     </style>
     <!-- About me -->
-    <section id="aboutme" class="about-me section-oscura"
+    <section id="aboutme" class="fade-in about-me section-oscura"
         style="background-image: url('./images/programin.jpg'); background-size: cover; background-position: center; height: 100vh;">
         <div class="contenedor">
             <h2 class="seccion-titulo">Conoce a Heriberto</h2>
@@ -141,7 +148,7 @@
 
 
     <!-- Experience -->
-    <section class="experiencia section-clara">
+    <section id="skills" class="experiencia section-clara">
         <div class="container text-center">
             <div class="row">
                 <!-- Programming -->
@@ -189,7 +196,7 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="proyectos section-clara d-flex flex-column">
+    <section id="proyectos" class="fade-in proyectos section-clara d-flex flex-column">
         <h2 class="seccion-titulo" style="text-align: center;">Mis Proyectos</h2>
         <h3 class="seccion-descripcion" style="text-align: center; ">Me apasiona crear soluciones innovadoras. A
             continuación, te comparto algunos de los proyectos en los que he trabajado, cada uno representando un paso
@@ -286,7 +293,7 @@
     </section>
 
     <!-- Tips -->
-    <section class="tips justify-content-start">
+    <section class="tips fade-in" justify-content-start">
         <h2 class="seccion-titulo">Tips</h2>
         <div class="card">
             <div class="card-header">
@@ -320,7 +327,7 @@
     </section>
 
     <!-- References -->
-    <section id="references" class="recomendaciones section-clara">
+    <section id="references" class="fade-in recomendaciones section-clara">
         <h2 class="seccion-titulo">Recomendaciones</h2>
         <h3 class="seccion-descripcion" style="text-align: center;">He tenido el privilegio de trabajar con personas
             increíbles que han sido parte fundamental de mi desarrollo profesional. Aquí algunas recomendaciones que
@@ -385,7 +392,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contactme" class="contact section-oscura">
+    <section id="contacto" class="fade-in contact section-oscura">
         <div class="container">
             <div class="container text-center rectangulo d-flex justify-content-evenly">
                 <div class="row">
@@ -450,6 +457,54 @@
         crossorigin="anonymous"></script>
     <!-- My JS -->
     <script src="./js/main.js"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+$(document).ready(function () {
+    // Efecto al hacer scroll hacia secciones
+    $('a.nav-link').on('click', function (e) {
+        if (this.hash !== '') {
+            e.preventDefault();
+            const hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 60
+            }, 800);
+        }
+    });
+
+    // Mostrar botón "Ir arriba"
+    const btnUp = $('<button/>', {
+        class: 'btn btn-success position-fixed',
+        html: '<i class="bi bi-arrow-up"></i>',
+        style: 'bottom: 20px; right: 20px; display: none; z-index: 999;',
+        click: () => $('html, body').animate({ scrollTop: 0 }, 600)
+    }).appendTo('body');
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            btnUp.fadeIn();
+        } else {
+            btnUp.fadeOut();
+        }
+    });
+});
+</script>
+
+<script>
+$(window).on('scroll', function () {
+    $('.fade-in').each(function () {
+        const top = $(this).offset().top;
+        const scroll = $(window).scrollTop();
+        const height = $(window).height();
+        if (scroll + height > top + 100) {
+            $(this).addClass('show');
+        }
+    });
+});
+</script>
+
 </body>
 
 </html>
